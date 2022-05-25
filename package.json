@@ -1,0 +1,21 @@
+{
+  "name": "moon-bird",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "workspaces": [
+    "api",
+    "app"
+  ],
+  "scripts": {
+    "start:api": "yarn workspace @moon-bird/api start",
+    "start:app": "yarn workspace @moon-bird/app start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  }
+}
