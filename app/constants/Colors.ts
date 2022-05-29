@@ -1,6 +1,14 @@
 const tintColorLight = '#2f95dc';
 const tintColorDark = '#fff';
 
+export const journeyColors: any = {
+  focus: '#002FA7',
+  goodnight: '#2A5741',
+  happiness: '#E8A455',
+  textGray: '#718096',
+  titleBlack: '#343A40',
+};
+
 export default {
   light: {
     text: '#000',
@@ -15,5 +23,12 @@ export default {
     tint: tintColorDark,
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorDark,
+  },
+  journeyColors: {
+    focus: '#002FA7',
+    goodnight: '#2A5741',
+    happiness: '#E8A455',
+    textGray: '#718096',
+    titleBlack: '#343A40',
   },
 };

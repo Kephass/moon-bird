@@ -1,11 +1,50 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, FlatList } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import Journey from '../components/Journey';
 import { RootTabScreenProps } from '../types';
 
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+const journeyArray = [
+  {
+    id: 'focus',
+    title: 'Focus',
+    description: 'Get some sleep and sweet dreams',
+    progress: '20%',
+  },
+  {
+    id: 'goodnight',
+    title: 'Goodnight',
+    description: 'Get some sleep and sweet dreams',
+    progress: '50%',
+  },
+  {
+    id: 'happiness',
+    title: 'Happiness',
+    description: 'Get some sleep and sweet dreams',
+    progress: '80%',
+  },
+  {
+    id: 'breathing',
+    title: 'Personalised breathing',
+    description: 'Get some sleep and sweet dreams',
+    progress: '10%',
+  },
+  {
+    id: 'energy',
+    title: 'Energy',
+    description: 'Get some sleep and sweet dreams',
+    progress: '50%',
+  },
+  {
+    id: 'energ',
+    title: 'Energy',
+    description: 'Get some sleep and sweet dreams',
+    progress: '50%',
+  },
+];
+
+export default function Journeys({ navigation }: RootTabScreenProps<'Journeys'>) {
   const [user, setUser] = React.useState<{ id: string; email: string } | null>(null);
 
   React.useEffect(() => {
@@ -35,14 +74,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
 
   console.log('user', user);
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab Felix</Text>
-      <Text style={styles.title}>Email: {user?.email}</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
-    </View>
-  );
+  return <FlatList data={journeyArray} renderItem={({ item }) => <Journey {...item} />} />;
 }
 
 const styles = StyleSheet.create({

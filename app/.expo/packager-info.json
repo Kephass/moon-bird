@@ -5,5 +5,6 @@
   "webpackServerPort": 19006,
   "expoServerNgrokUrl": "https://6d-zmk.anonymous.app.exp.direct",
   "packagerNgrokUrl": "https://6d-zmk.anonymous.app.exp.direct",
-  "ngrokPid": 9314
+  "ngrokPid": 20217,
+  "packagerPid": null
 }
