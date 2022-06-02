@@ -1,2 +1,4 @@
 node_modules
 .history
+
+app/.expo/web/cache/
