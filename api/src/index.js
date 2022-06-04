@@ -9,6 +9,7 @@ const typeDefs = gql`
 
   type User {
     id: ID
+    name: String
     email: String
   }
 
@@ -45,7 +46,7 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    currentUser: () => ({ id: '2', email: 'test@test.com' }),
+    currentUser: () => ({ name: 'Felix', id: '2', email: 'test@test.com' }),
     journey: () => ({}),
     journeys: () => [],
   },
@@ -53,7 +54,7 @@ const resolvers = {
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers,
+  mocks: true,
 });
 
 server.listen().then(({ url }) => {
