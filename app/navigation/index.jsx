@@ -1,13 +1,12 @@
-import { FontAwesome } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
 
-// import HomeIcon from '../assets/icons/home.svg';
-// import JourneysIcon from '../assets/icons/journeys.svg';
-// import StatsIcon from '../assets/icons/stats.svg';
-// import SettingsIcon from '../assets/icons/settings.svg';
+import HomeIcon from '../assets/icons/home.svg';
+import JourneysIcon from '../assets/icons/journeys.svg';
+import StatsIcon from '../assets/icons/stats.svg';
+import SettingsIcon from '../assets/icons/settings.svg';
 
 import Colors from '../constants/Colors';
 
@@ -54,7 +53,7 @@ function BottomTabNavigator() {
         component={Home}
         options={{
           title: 'Home',
-          tabBarIcon: () => <FontAwesome name="code" />,
+          tabBarIcon: () => <HomeIcon />,
         }}
       />
       <BottomTab.Screen
@@ -63,7 +62,7 @@ function BottomTabNavigator() {
         options={{
           title: 'Your Journeys',
           tabBarLabel: 'Journeys',
-          tabBarIcon: () => <FontAwesome name="code" />,
+          tabBarIcon: () => <JourneysIcon />,
         }}
       />
       <BottomTab.Screen
@@ -71,7 +70,7 @@ function BottomTabNavigator() {
         component={Stats}
         options={{
           title: 'Stats',
-          tabBarIcon: () => <FontAwesome name="code" />,
+          tabBarIcon: () => <StatsIcon />,
         }}
       />
       <BottomTab.Screen
@@ -79,7 +78,7 @@ function BottomTabNavigator() {
         component={Settings}
         options={{
           title: 'Settings',
-          tabBarIcon: () => <FontAwesome name="code" />,
+          tabBarIcon: () => <SettingsIcon />,
         }}
       />
     </BottomTab.Navigator>
