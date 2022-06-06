@@ -1,27 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Card, Text } from 'react-native-ui-lib';
+import useJourneys from '../hooks/useJourneys';
 
 export default function Journeys() {
+  const { journeys } = useJourneys();
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Journeys</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-    </View>
+    <Card>
+      {journeys.map((journey) => (
+        <Text key={journey.id}>{journey.name}</Text>
+      ))}
+    </Card>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});

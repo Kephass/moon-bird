@@ -14,7 +14,8 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "@react-native-picker/picker": "^2.4.1",
+    "@apollo/client": "^3.6.6",
+    "@react-native-picker/picker": "2.4.0",
     "@react-navigation/bottom-tabs": "^6.0.5",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
@@ -27,6 +28,9 @@
     "expo-status-bar": "~1.3.0",
     "expo-system-ui": "~1.2.0",
     "expo-web-browser": "10.2.1",
+    "graphql": "^16.5.0",
+    "graphql-request": "^4.3.0",
+    "lottie-react-native": "5.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-native": "0.68.2",
@@ -36,7 +40,9 @@
     "react-native-screens": "~3.11.1",
     "react-native-svg": "12.3.0",
     "react-native-ui-lib": "^6.16.1",
-    "react-native-web": "0.17.7"
+    "react-native-web": "0.17.7",
+    "react-scripts": "^5.0.1",
+    "swr": "^1.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -44,6 +50,9 @@
     "jest": "^26.6.3",
     "jest-expo": "~45.0.0",
     "react-native-svg-transformer": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react-native": "0.68.2"
   },
   "private": true
 }
