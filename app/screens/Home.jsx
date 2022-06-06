@@ -1,28 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Card } from 'react-native-ui-lib';
 
 import LottieView from 'lottie-react-native';
 
 export default function Home() {
   return (
-    <View style={styles.container}>
+    <Card flex center>
       <LottieView source={require('../assets/animations/breathing-lotus.json')} mode="bounce" loop autoplay />
-    </View>
+    </Card>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
