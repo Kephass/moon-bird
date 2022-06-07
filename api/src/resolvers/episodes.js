@@ -1,18 +1,36 @@
-const journeys = [
+const episode = [
   {
     id: '1',
     episodes: [
       {
         id: '1',
-        name: 'Episode 1',
-        duration: '1:00',
+        name: 'Get started',
+        duration: '12min',
         status: 'DONE',
       },
       {
         id: '2',
-        name: 'Episode 2',
-        duration: '1:00',
+        name: 'Be one',
+        duration: '12min',
         status: 'NEXT_UP',
+      },
+      {
+        id: '3',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
+      },
+      {
+        id: '4',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
+      },
+      {
+        id: '5',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
       },
     ],
   },
@@ -21,15 +39,33 @@ const journeys = [
     episodes: [
       {
         id: '1',
-        name: 'Episode 1',
-        duration: '1:00',
+        name: 'Get started',
+        duration: '12min',
         status: 'DONE',
       },
       {
         id: '2',
-        name: 'Episode 2',
-        duration: '1:00',
+        name: 'Be one',
+        duration: '12min',
         status: 'NEXT_UP',
+      },
+      {
+        id: '3',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
+      },
+      {
+        id: '4',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
+      },
+      {
+        id: '5',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
       },
     ],
   },
@@ -38,15 +74,33 @@ const journeys = [
     episodes: [
       {
         id: '1',
-        name: 'Episode 1',
-        duration: '1:00',
+        name: 'Get started',
+        duration: '12min',
         status: 'DONE',
       },
       {
         id: '2',
-        name: 'Episode 2',
-        duration: '1:00',
+        name: 'Be one',
+        duration: '12min',
         status: 'NEXT_UP',
+      },
+      {
+        id: '3',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
+      },
+      {
+        id: '4',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
+      },
+      {
+        id: '5',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
       },
     ],
   },
@@ -55,15 +109,33 @@ const journeys = [
     episodes: [
       {
         id: '1',
-        name: 'Episode 1',
-        duration: '1:00',
+        name: 'Get started',
+        duration: '12min',
         status: 'DONE',
       },
       {
         id: '2',
-        name: 'Episode 2',
-        duration: '1:00',
+        name: 'Be one',
+        duration: '12min',
         status: 'NEXT_UP',
+      },
+      {
+        id: '3',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
+      },
+      {
+        id: '4',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
+      },
+      {
+        id: '5',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
       },
     ],
   },
@@ -72,15 +144,33 @@ const journeys = [
     episodes: [
       {
         id: '1',
-        name: 'Episode 1',
-        duration: '1:00',
+        name: 'Get started',
+        duration: '12min',
         status: 'DONE',
       },
       {
         id: '2',
-        name: 'Episode 2',
-        duration: '1:00',
+        name: 'Be one',
+        duration: '12min',
         status: 'NEXT_UP',
+      },
+      {
+        id: '3',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
+      },
+      {
+        id: '4',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
+      },
+      {
+        id: '5',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
       },
     ],
   },
@@ -89,23 +179,43 @@ const journeys = [
     episodes: [
       {
         id: '1',
-        name: 'Episode 1',
-        duration: '1:00',
+        name: 'Get started',
+        duration: '12min',
         status: 'DONE',
       },
       {
         id: '2',
-        name: 'Episode 2',
-        duration: '1:00',
+        name: 'Be one',
+        duration: '12min',
         status: 'NEXT_UP',
+      },
+      {
+        id: '3',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
+      },
+      {
+        id: '4',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
+      },
+      {
+        id: '5',
+        name: 'Good night',
+        duration: '12min',
+        status: 'LOCKED',
       },
     ],
   },
 ];
 
 const episodes = (_journey) => {
-  const j = journeys.find((journey) => journey.id === _journey.id);
+  console.log(_journey.id);
+  const j = episode.find((journey) => journey.id === _journey.id);
+  // console.log(j);
   return j.episodes;
 };
 
-export default episodes;
+module.exports = episodes;
