@@ -25,7 +25,7 @@ const journeys = [
   },
   {
     id: '4',
-    name: 'Personal',
+    name: 'Personalised breathing',
     description: 'Get some sleep and sweet dreams',
     type: 'PERSONAL',
     progress: 0,

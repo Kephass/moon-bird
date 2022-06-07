@@ -15,12 +15,10 @@ import Home from '../screens/Home';
 import Journeys from '../screens/Journeys';
 import Stats from '../screens/Stats';
 import Settings from '../screens/Settings';
-
-//import LinkingConfiguration from './LinkingConfiguration';
+import Episodes from '../screens/Episodes';
 
 export default function Navigation() {
   return (
-    //<NavigationContainer linking={LinkingConfiguration}>
     <NavigationContainer>
       <RootNavigator />
     </NavigationContainer>
@@ -38,12 +36,25 @@ function RootNavigator() {
   );
 }
 
+function JourneysNavigator() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Journeys"
+        component={Journeys}
+        options={{ headerShown: true, title: 'Your Journeys' }}
+      />
+      <Stack.Screen name="Episodes" component={Episodes} options={{ headerShown: true, title: 'Episodes' }} />
+    </Stack.Navigator>
+  );
+}
+
 const BottomTab = createBottomTabNavigator();
 
 function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
-      initialRouteName="Journeys"
+      initialRouteName="JourneysTab"
       screenOptions={{
         tabBarActiveTintColor: Colors.light.tint,
       }}
@@ -57,10 +68,10 @@ function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="Journeys"
-        component={Journeys}
+        name="JourneysTab"
+        component={JourneysNavigator}
         options={{
-          title: 'Your Journeys',
+          headerShown: false,
           tabBarLabel: 'Journeys',
           tabBarIcon: () => <JourneysIcon />,
         }}

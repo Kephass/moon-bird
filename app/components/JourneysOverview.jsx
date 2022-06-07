@@ -1,5 +1,5 @@
 import React from 'react';
-import useSWR from 'swr';
+import { ListItem, Text } from 'react-native-ui-lib';
 
 import { ListItem, Text } from 'react-native-ui-lib';
 
