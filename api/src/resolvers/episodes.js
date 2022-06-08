@@ -212,9 +212,7 @@ const episode = [
 ];
 
 const episodes = (_journey) => {
-  console.log(_journey.id);
   const j = episode.find((journey) => journey.id === _journey.id);
-  // console.log(j);
   return j.episodes;
 };
 

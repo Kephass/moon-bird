@@ -1,41 +1,95 @@
-import { Card, ListItem, Text, View, Assets, Image } from 'react-native-ui-lib';
+import { ListItem, Text, View } from 'react-native-ui-lib';
+import Colors from '../constants/Colors';
+import { journeyColors } from '../constants/Colors';
 
 import useJourneys from '../hooks/useJourneys';
 
-import Blob from '../assets/icons/blobs.svg';
 import ArrowRight from '../assets/icons/chevron-right.svg';
+
+import FocusBlob from '../assets/icons/focus-blob.svg';
 import FocusIcon from '../assets/icons/focus.svg';
+
+import SleepBlob from '../assets/icons/sleep-blob.svg';
 import SleepIcon from '../assets/icons/sleep.svg';
+
+import HappyBlob from '../assets/icons/happy-blob.svg';
 import HappyIcon from '../assets/icons/happy.svg';
-import BreathingIcon from '../assets/icons/personal.svg';
-import { TouchableOpacity } from 'react-native';
+
+import PersonalBlob from '../assets/icons/personal-blob.svg';
+import PersonalIcon from '../assets/icons/personal.svg';
+import { ScrollView } from 'react-native';
+
+const journeyIcons = [
+  {
+    id: '1',
+    blob: <FocusBlob />,
+    Icon: <FocusIcon />,
+  },
+  {
+    id: '2',
+    blob: <SleepBlob />,
+    Icon: <SleepIcon />,
+  },
+  {
+    id: '3',
+    blob: <HappyBlob />,
+    Icon: <HappyIcon />,
+  },
+  {
+    id: '4',
+    blob: <PersonalBlob />,
+    Icon: <PersonalIcon />,
+  },
+  {
+    id: '5',
+    blob: <SleepBlob />,
+    Icon: <SleepIcon />,
+  },
+  {
+    id: '6',
+    blob: <SleepBlob />,
+    Icon: <SleepIcon />,
+  },
+];
 
 export default function Journeys({ navigation }) {
   const { journeys } = useJourneys();
 
-  Assets.loadAssetsGroup('icons', {
-    focus: require('../assets/icons/focus.svg'),
-  });
-
   return (
-    <View flex borderRadius="0" style={{ paddingHorizontal: 20, backgroundColor: 'white' }}>
+    <ScrollView flex borderRadius="0" paddingHorizontal={20} backgroundColor="white">
       {journeys.map((journey) => (
-        <View key={journey.id}>
+        <View key={journey.id} style={journey.isComingSoon ? { opacity: '.4', pointerEvents: 'none' } : ''}>
           <ListItem
-            onPress={() => navigation.navigate('Episodes', { id: journey.id })}
+            onPress={() =>
+              navigation.navigate('Episodes', {
+                id: journey.id,
+                name: journey.name,
+                description: journey.description,
+                progress: journey.progress,
+              })
+            }
             style={{ marginVertical: 10 }}
           >
             <View flex row spread>
-              <View>
-                <Blob>
-                  <Image assetName="focus" assetGroup="icons" />
-                </Blob>
+              <View style={{ position: 'relative' }}>
+                {journeyIcons[journey?.id - 1].blob}
+
+                <View
+                  style={{
+                    position: 'absolute',
+                    top: 25,
+                    left: 22,
+                    alignItems: 'center',
+                  }}
+                >
+                  {journeyIcons[journey?.id - 1].Icon}
+                </View>
               </View>
               <View flex>
-                <Text marginV-5 text70 style={{ color: '#343A40', fontWeight: 'bold' }}>
+                <Text marginV-5 text70 style={{ color: Colors.light.titleBlack, fontWeight: 'bold' }}>
                   {journey.name}
                 </Text>
-                <Text marginV-5 style={{ color: '#718096' }}>
+                <Text text80 marginB-5 color={Colors.light.textGray} fon>
                   {journey.description}
                 </Text>
                 {journey.progress > 0 && (
@@ -45,7 +99,7 @@ export default function Journeys({ navigation }) {
                   >
                     <View
                       style={{
-                        backgroundColor: '#012fa7',
+                        backgroundColor: journeyColors.goodnight,
                         width: `${journey.progress}%`,
                         height: '100%',
                         borderRadius: 15,
@@ -62,6 +116,6 @@ export default function Journeys({ navigation }) {
           <View marginV-6 style={{ width: '100%', height: 1, backgroundColor: '#f2f2f2' }} />
         </View>
       ))}
-    </View>
+    </ScrollView>
   );
 }
