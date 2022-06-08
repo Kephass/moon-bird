@@ -1,6 +1,8 @@
 import { Card } from 'react-native-ui-lib';
-
 import LottieView from 'lottie-react-native';
+import { LogBox } from 'react-native';
+
+LogBox.ignoreLogs(['ViewPropTypes will be removed from React Native']);
 
 export default function Home() {
   return (
