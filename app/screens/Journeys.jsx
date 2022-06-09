@@ -22,31 +22,37 @@ import { ScrollView } from 'react-native';
 const journeyIcons = [
   {
     id: '1',
+    color: '#002FA7',
     blob: <FocusBlob />,
     Icon: <FocusIcon />,
   },
   {
     id: '2',
+    color: '#2A5741',
     blob: <SleepBlob />,
     Icon: <SleepIcon />,
   },
   {
     id: '3',
+    color: '#E8A455',
     blob: <HappyBlob />,
     Icon: <HappyIcon />,
   },
   {
     id: '4',
+    color: '#002FA7',
     blob: <PersonalBlob />,
     Icon: <PersonalIcon />,
   },
   {
     id: '5',
+    color: '#2A5741',
     blob: <SleepBlob />,
     Icon: <SleepIcon />,
   },
   {
     id: '6',
+    color: '#2A5741',
     blob: <SleepBlob />,
     Icon: <SleepIcon />,
   },
@@ -99,7 +105,7 @@ export default function Journeys({ navigation }) {
                   >
                     <View
                       style={{
-                        backgroundColor: journeyColors.goodnight,
+                        backgroundColor: journeyIcons[journey.id - 1].color,
                         width: `${journey.progress}%`,
                         height: '100%',
                         borderRadius: 15,
