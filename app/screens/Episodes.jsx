@@ -1,5 +1,5 @@
 import { useRoute } from '@react-navigation/native';
-import useEpisodes from '../hooks/useEpisodes';
+import { useGetEpisodesOfJourney } from '../hooks/';
 
 import Check from '../assets/icons/check.svg';
 import Lock from '../assets/icons/lock.svg';
@@ -10,7 +10,7 @@ import { ScrollView } from 'react-native';
 
 const Episodes = () => {
   const { params } = useRoute();
-  const { episodes } = useEpisodes(params.id);
+  const { episodes } = useGetEpisodesOfJourney(params.id);
   const button = (
     <Button
       label="Continue"

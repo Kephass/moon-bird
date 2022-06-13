@@ -1,7 +1,7 @@
-const currentUser = require('./currentUser');
-const journeys = require('./journeys');
-const journey = require('./journey');
-const episodes = require('./episodes');
+const currentUser = require('./currentUserResolver');
+const journeys = require('./journeysResolver');
+const journey = require('./journeyResolver');
+const episodes = require('./episodesResolver');
 
 const resolvers = {
   Query: {

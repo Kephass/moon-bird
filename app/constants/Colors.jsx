@@ -1,6 +1,4 @@
-'use strict';
 const tintColorLight = '#002FA7';
-const tintColorDark = '#fff';
 
 export const journeyColors = {
   focus: '#002FA7',
@@ -22,15 +20,5 @@ export default {
     tint: tintColorLight,
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorLight,
-  },
-  dark: {
-    text: '#fff',
-    background: '#000',
-    blue: '#012fa6',
-    textGray: '#718096',
-    titleBlack: '#343A40',
-    tint: tintColorDark,
-    tabIconDefault: '#ccc',
-    tabIconSelected: tintColorDark,
   },
 };

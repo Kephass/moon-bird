@@ -13,10 +13,8 @@ const GET_JOURNEYS = gql`
   }
 `;
 
-const useJourneys = () => {
+export const useGetJourneys = () => {
   const { loading, error, data } = useQuery(GET_JOURNEYS);
   const journeys = data ? data.journeys : [];
   return { loading, error, data, journeys };
 };
-
-export default useJourneys;

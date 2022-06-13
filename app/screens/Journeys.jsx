@@ -2,7 +2,7 @@ import { ListItem, Text, View } from 'react-native-ui-lib';
 import Colors from '../constants/Colors';
 import { journeyColors } from '../constants/Colors';
 
-import useJourneys from '../hooks/useJourneys';
+import { useGetJourneys } from '../hooks';
 
 import ArrowRight from '../assets/icons/chevron-right.svg';
 
@@ -59,7 +59,7 @@ const journeyIcons = [
 ];
 
 export default function Journeys({ navigation }) {
-  const { journeys } = useJourneys();
+  const { journeys } = useGetJourneys();
 
   return (
     <ScrollView flex borderRadius="0" paddingHorizontal={20} backgroundColor="white">
