@@ -14,7 +14,7 @@ const GET_EPISODES = gql`
   }
 `;
 
-const useEpisodes = (id = '') => {
+export const useGetEpisodesOfJourney = (id = '') => {
   const { loading, error, data } = useQuery(GET_EPISODES, {
     variables: {
       id,
@@ -23,5 +23,3 @@ const useEpisodes = (id = '') => {
   const episodes = data?.journey?.episodes || [];
   return { loading, error, data, episodes };
 };
-
-export default useEpisodes;

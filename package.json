@@ -17,8 +17,5 @@
   "license": "ISC",
   "devDependencies": {
     "prettier": "^2.6.2"
-  },
-  "dependencies": {
-    "react-scripts": "^5.0.1"
   }
 }

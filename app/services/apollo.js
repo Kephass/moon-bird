@@ -30,7 +30,7 @@ const logTimeLink = new ApolloLink((operation, forward) => {
 
 // use your development machine ip address
 const httpLink = createHttpLink({
-  uri: 'http://192.168.0.227:4000/',
+  uri: 'http://192.168.0.228:4000/',
 });
 
 const link = ApolloLink.from([timeStartLink, logTimeLink, errorLink, httpLink]);

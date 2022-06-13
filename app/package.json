@@ -54,5 +54,5 @@
   "peerDependencies": {
     "react-native": "0.68.2"
   },
-  "private": true
+  "private": false
 }

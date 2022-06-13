@@ -4,7 +4,7 @@ import { ApolloProvider } from '@apollo/client';
 import useCachedResources from './hooks/useCachedResources';
 import Navigation from './navigation';
 import client from './services/apollo';
-import Wrapper from './components/Wrapper';
+import { FetchUserWrapper } from './components';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -16,10 +16,10 @@ export default function App() {
   return (
     <ApolloProvider client={client}>
       <SafeAreaProvider>
-        <Wrapper>
+        <FetchUserWrapper>
           <Navigation />
           <StatusBar />
-        </Wrapper>
+        </FetchUserWrapper>
       </SafeAreaProvider>
     </ApolloProvider>
   );
